@@ -24,14 +24,11 @@ export class HomePage {
     return channel;
   }
 
-  async schedule() {
-    const channel = await this.createChannel();
+  schedule() {
     const notifications: LocalNotificationSchema[] = [{
       title: 'Local notifications',
       body: 'Local Notifications Test app',
-      id: new Date().getTime(),
-      schedule: { at: new Date(), allowWhileIdle: true },
-      channelId: channel.id,
+      id: 1
     }];
     LocalNotifications.schedule({
       notifications
